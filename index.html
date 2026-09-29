@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d10">
+<link rel="manifest" href="manifest.json">
+<title>90 Day Aesthetic</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090b0e;color:#f5f6f7;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:760px;margin:auto;padding:18px 16px 90px}.hero{padding:18px 2px}.eyebrow{font-size:12px;color:#9ba3ad;letter-spacing:.12em}.hero h1{margin:4px 0;font-size:32px}.muted,.small{color:#9ba3ad}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:#14171c;border:1px solid #252a32;border-radius:18px;padding:16px;margin:10px 0}.big{font-size:26px;font-weight:800}.progress{height:9px;background:#292e36;border-radius:20px;overflow:hidden}.bar{height:100%;background:#f5f6f7;width:0}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 8px}.tab{border:1px solid #303640;background:#14171c;color:#ddd;border-radius:999px;padding:9px 13px;white-space:nowrap}.tab.active{background:#f5f6f7;color:#090b0e}.row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #252a31}.row:last-child{border-bottom:0}.row input{width:20px;height:20px;accent-color:#fff}.pill{margin-left:auto;color:#aab1bb;font-size:12px}.btn{border:0;border-radius:11px;padding:11px 14px;font-weight:750;background:#f5f6f7;color:#090b0e}.btn.alt{background:#252a32;color:#fff}.input{width:100%;background:#0d1014;color:#fff;border:1px solid #303640;border-radius:10px;padding:10px}.notice{font-size:13px;line-height:1.5;color:#b5bcc5}.nav{position:fixed;bottom:0;left:0;right:0;background:#101318ee;backdrop-filter:blur(12px);border-top:1px solid #272c34;display:flex;justify-content:center;gap:6px;padding:10px}.nav button{background:transparent;color:#aaa;border:0;padding:8px 14px;border-radius:10px}.nav button.active{background:#252a32;color:#fff}.hidden{display:none}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<div class="eyebrow">90-DAY BODY RECOMPOSITION</div>
+<h1 id="title">Aesthetic Plan 🔥</h1>
+<div id="clock" class="muted"></div>
+</section>
+
+<div id="home">
+<div class="grid">
+<div class="card"><div class="small">TODAY</div><div class="big" id="date"></div><div class="small" id="day90"></div></div>
+<div class="card"><div class="small">WORKOUT</div><div class="big" id="todayWorkout"></div><div class="small">9:00–11:30 AM</div></div>
+</div>
+<div class="card">
+<h2 id="todayHeading">Today's workout</h2>
+<div id="todayList"></div>
+</div>
+<div class="card">
+<h2>🏃 Treadmill</h2>
+<div><b>20–25 min</b> • 4.5–5.5 km/h • 5–8% incline</div>
+<p class="notice">Do it after weights. Keep the intensity moderate so your lifting performance stays strong.</p>
+</div>
+<div class="card">
+<h2>⏰ Reminder</h2>
+<p class="notice">Choose a reminder time. Android notifications require notification permission and may require the app to be installed/hosted as a PWA for background delivery.</p>
+<div class="grid"><input class="input" id="reminder" type="time" value="08:30"><button class="btn" onclick="enableReminder()">Enable reminder</button></div>
+<p id="reminderStatus" class="small"></p>
+</div>
+</div>
+
+<div id="workout" class="hidden">
+<div class="tabs" id="tabs"></div>
+<div class="card"><h2 id="workoutHeading"></h2><div id="workoutList"></div></div>
+</div>
+
+<div id="diet" class="hidden">
+<div class="card"><h2>🥗 Daily Diet</h2>
+<div id="dietList"></div>
+</div>
+<div class="card"><h2>💊 Supplements</h2>
+<div class="row"><b>Pea protein</b><span class="pill">2 servings as needed</span></div>
+<div class="row"><b>Creatine</b><span class="pill">3–5 g daily</span></div>
+<div class="row"><b>Omega-3</b><span class="pill">with a meal if using</span></div>
+<div class="row"><b>Multivitamin</b><span class="pill">with food if using</span></div>
+</div>
+</div>
+
+<div id="progress" class="hidden">
+<div class="card"><h2>📈 Progress</h2>
+<div class="grid"><label class="small">Weight (kg)<input class="input" id="weight" type="number" step=".1"></label><label class="small">Waist (cm)<input class="input" id="waist" type="number" step=".1"></label></div>
+<br><button class="btn" onclick="saveStats()">Save stats</button>
+</div>
+<div class="card"><h2>90-day completion</h2><div class="progress"><div id="bar" class="bar"></div></div><p id="progressText" class="small"></p></div>
+</div>
+</main>
+
+<nav class="nav">
+<button class="active" onclick="show('home',this)">Home</button>
+<button onclick="show('workout',this)">Workout</button>
+<button onclick="show('diet',this)">Diet</button>
+<button onclick="show('progress',this)">Progress</button>
+</nav>
+
+<script>
+const workouts={
+MON:{name:"PUSH A",items:[["Incline DB Press","3 × 6–10"],["Flat Bench","3 × 6–10"],["Cable Fly","2 × 10–15"],["Lateral Raise","4 × 12–20"],["Triceps Pushdown","3 × 10–15"],["Overhead Extension","2 × 10–15"]]},
+TUE:{name:"PULL A",items:[["Lat Pulldown","3 × 8–12"],["Chest-Supported Row","3 × 8–12"],["Single-Arm Pulldown","2 × 10–15"],["Cable Row","2 × 10–15"],["Rear Delt Fly","3 × 12–20"],["DB Curl","3 × 8–12"],["Hammer Curl","2 × 10–15"]]},
+WED:{name:"LEGS A + ABS",items:[["Squat / Leg Press","3 × 6–10"],["Romanian Deadlift","3 × 8–12"],["Leg Extension","3 × 10–15"],["Leg Curl","3 × 10–15"],["Calf Raise","4 × 10–15"],["Hanging Leg Raise","3 × 10–15"],["Cable Crunch","3 × 10–15"]]},
+THU:{name:"PUSH B",items:[["Incline Bench","3 × 6–10"],["Shoulder Press","3 × 6–10"],["Machine Chest Press","2 × 8–12"],["Lateral Raise","4 × 12–20"],["Cable Fly","2 × 12–15"],["Triceps Pushdown","3 × 10–15"],["Overhead Extension","2 × 10–15"]]},
+FRI:{name:"PULL B",items:[["Lat Pulldown","3 × 8–12"],["Barbell / Cable Row","3 × 8–12"],["Seated Cable Row","2 × 10–15"],["Straight-Arm Pulldown","2 × 12–15"],["Rear Delt Fly","3 × 15–20"],["EZ-Bar Curl","3 × 8–12"],["Hammer Curl","2 × 10–15"]]},
+SAT:{name:"LEGS B + ABS",items:[["Leg Press","3 × 8–12"],["Romanian Deadlift","3 × 8–12"],["Bulgarian Split Squat","2 × 8–12"],["Leg Curl","3 × 10–15"],["Leg Extension","2 × 12–15"],["Calf Raise","4 × 10–15"],["Hanging Leg Raise","3 × 10–15"],["Cable Crunch","3 × 10–15"]]},
+SUN:{name:"REST",items:[["Recovery","Rest"],["Optional treadmill","30–40 min easy"]]}
+};
+const diet=[
+["7:30 AM","Breakfast","4 eggs + oats + banana"],
+["8:30 AM","Pre-workout","Water; black coffee optional"],
+["9:00–11:30 AM","Gym","Weights + treadmill"],
+["11:45 AM","Post-workout","1 scoop pea protein + 3–5 g creatine + banana"],
+["1:30–2:00 PM","Lunch","Rice/rotis + protein source + vegetables + curd"],
+["4:30–5:00 PM","Protein","2nd scoop pea protein if needed + fruit"],
+["7:30–8:30 PM","Dinner","Protein source + rotis/rice + vegetables"],
+["10:30 PM","Optional","Curd/milk if protein target isn't met"]
+];
+
+const keys=["MON","TUE","WED","THU","FRI","SAT","SUN"];
+function todayKey(){return keys[new Date().getDay()==0?6:new Date().getDay()-1]}
+function startDate(){let x=localStorage.getItem("start90");if(!x){x=new Date().toISOString();localStorage.setItem("start90",x)}return new Date(x)}
+function dayNum(){return Math.min(90,Math.max(1,Math.floor((Date.now()-startDate().getTime())/86400000)+1))}
+function render(){
+let now=new Date(), k=todayKey(), w=workouts[k];
+document.getElementById("date").textContent=now.toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"});
+document.getElementById("day90").textContent=`Day ${dayNum()} of 90`;
+document.getElementById("todayWorkout").textContent=w.name;
+document.getElementById("todayHeading").textContent=`Today's workout — ${w.name}`;
+document.getElementById("todayList").innerHTML=items(w,k);
+document.getElementById("clock").textContent=now.toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+document.getElementById("bar").style.width=(dayNum()/90*100)+"%";
+document.getElementById("progressText").textContent=`Day ${dayNum()} of 90`;
+document.getElementById("weight").value=localStorage.getItem("weight")||"";
+document.getElementById("waist").value=localStorage.getItem("waist")||"";
+document.getElementById("reminder").value=localStorage.getItem("reminder")||"08:30";
+document.getElementById("reminderStatus").textContent=localStorage.getItem("reminder")?"Reminder saved for "+localStorage.getItem("reminder"):"Reminder not enabled";
+document.getElementById("dietList").innerHTML=diet.map(x=>`<div class="row"><span><b>${x[0]}</b> — ${x[1]}<br><span class="small">${x[2]}</span></span></div>`).join("");
+}
+function items(w,k){return w.items.map((x,i)=>{let id=`${k}-${i}`;return `<div class="row"><input type="checkbox" ${localStorage.getItem(id)==="1"?"checked":""} onchange="localStorage.setItem('${id}',this.checked?'1':'0')"><span><b>${x[0]}</b><br><span class="small">${x[1]}</span></span></div>`}).join("")}
+function show(id,btn){["home","workout","diet","progress"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");if(id==="workout")renderTabs()}
+function renderTabs(){let k=todayKey();document.getElementById("tabs").innerHTML=keys.map(x=>`<button class="tab ${x===k?"active":""}" onclick="renderWorkout('${x}',this)">${x}</button>`).join("");renderWorkout(k,document.querySelector(".tab.active"))}
+function renderWorkout(k,btn){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));if(btn)btn.classList.add("active");document.getElementById("workoutHeading").textContent=workouts[k].name;document.getElementById("workoutList").innerHTML=items(workouts[k],k)}
+async function enableReminder(){
+localStorage.setItem("reminder",document.getElementById("reminder").value);
+if("Notification" in window){let p=await Notification.requestPermission();if(p==="granted"){new Notification("90 Day Aesthetic",{body:`Today's workout: ${workouts[todayKey()].name}`});document.getElementById("reminderStatus").textContent="Notifications enabled • reminder "+localStorage.getItem("reminder")}else document.getElementById("reminderStatus").textContent="Notification permission was not granted."}
+else document.getElementById("reminderStatus").textContent="Notifications aren't supported in this browser.";
+}
+function saveStats(){localStorage.setItem("weight",document.getElementById("weight").value);localStorage.setItem("waist",document.getElementById("waist").value);alert("Saved on this device.")}
+setInterval(render,1000);render();
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
