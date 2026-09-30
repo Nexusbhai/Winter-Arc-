@@ -5,10 +5,29 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0d10">
 <link rel="manifest" href="manifest.json">
-<title>90 Day Aesthetic</title>
+<title>90 Day Aesthetic • Winter Arc</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#090b0e;color:#f5f6f7;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
 main{max-width:760px;margin:auto;padding:18px 16px 90px}.hero{padding:18px 2px}.eyebrow{font-size:12px;color:#9ba3ad;letter-spacing:.12em}.hero h1{margin:4px 0;font-size:32px}.muted,.small{color:#9ba3ad}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:#14171c;border:1px solid #252a32;border-radius:18px;padding:16px;margin:10px 0}.big{font-size:26px;font-weight:800}.progress{height:9px;background:#292e36;border-radius:20px;overflow:hidden}.bar{height:100%;background:#f5f6f7;width:0}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 8px}.tab{border:1px solid #303640;background:#14171c;color:#ddd;border-radius:999px;padding:9px 13px;white-space:nowrap}.tab.active{background:#f5f6f7;color:#090b0e}.row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #252a31}.row:last-child{border-bottom:0}.row input{width:20px;height:20px;accent-color:#fff}.pill{margin-left:auto;color:#aab1bb;font-size:12px}.btn{border:0;border-radius:11px;padding:11px 14px;font-weight:750;background:#f5f6f7;color:#090b0e}.btn.alt{background:#252a32;color:#fff}.input{width:100%;background:#0d1014;color:#fff;border:1px solid #303640;border-radius:10px;padding:10px}.notice{font-size:13px;line-height:1.5;color:#b5bcc5}.nav{position:fixed;bottom:0;left:0;right:0;background:#101318ee;backdrop-filter:blur(12px);border-top:1px solid #272c34;display:flex;justify-content:center;gap:6px;padding:10px}.nav button{background:transparent;color:#aaa;border:0;padding:8px 14px;border-radius:10px}.nav button.active{background:#252a32;color:#fff}.hidden{display:none}
+
+:root{--bg:#07090c;--surface:#11151b;--surface2:#171c23;--line:#262d36;--text:#f7f8fa;--muted:#9ca6b2;--accent:#f4f6f8;--shadow:0 18px 50px rgba(0,0,0,.35)}
+body{background:radial-gradient(circle at 50% -10%,#1b222b 0,#07090c 42%);color:var(--text)}
+main{max-width:860px;padding-bottom:115px}.hero{padding:28px 4px 14px}.hero h1{font-size:36px;letter-spacing:-.04em}.card{background:linear-gradient(180deg,rgba(24,29,36,.96),rgba(14,18,23,.96));border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .2s,border-color .2s}.card:hover{border-color:#343c47}.big{font-size:28px;letter-spacing:-.03em}.btn{box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}.btn:active,.music-fab:active,.player-btn:active{transform:scale(.96)}
+.nav{z-index:20}.nav button{font-weight:700;min-width:76px}.nav button.active{background:#eef0f2;color:#07090c}
+.music-fab{position:fixed;right:18px;bottom:78px;width:58px;height:58px;border-radius:50%;border:1px solid #3b444f;background:#f4f6f8;color:#07090c;display:grid;place-items:center;font-size:24px;box-shadow:0 12px 35px rgba(0,0,0,.5);z-index:30;cursor:pointer}.music-fab.playing{animation:pulse 1.8s infinite}.music-fab .dot{position:absolute;right:2px;top:2px;width:10px;height:10px;background:#7ee787;border:2px solid #07090c;border-radius:50%}@keyframes pulse{0%,100%{box-shadow:0 12px 35px rgba(0,0,0,.5)}50%{box-shadow:0 12px 35px rgba(244,246,248,.25)}}
+.music-sheet{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.55);backdrop-filter:blur(7px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .22s}.music-sheet.open{opacity:1;pointer-events:auto}.music-panel{width:min(860px,100%);max-height:88vh;overflow:auto;background:linear-gradient(180deg,#161b22,#0d1116);border:1px solid #303944;border-bottom:0;border-radius:28px 28px 0 0;padding:18px 16px 30px;box-shadow:0 -25px 80px rgba(0,0,0,.6);transform:translateY(25px);transition:transform .25s}.music-sheet.open .music-panel{transform:translateY(0)}.grab{width:44px;height:4px;border-radius:99px;background:#59636f;margin:0 auto 14px}.music-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.music-title{font-size:24px;font-weight:850}.icon-btn{border:1px solid #303944;background:#1b2129;color:#fff;border-radius:12px;width:42px;height:42px;cursor:pointer}.player{margin-top:14px;padding:18px;border:1px solid #303944;background:linear-gradient(145deg,#1b2129,#10151b);border-radius:22px}.now{display:flex;gap:14px;align-items:center}.cover{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#f4f6f8,#6f7884);display:grid;place-items:center;color:#0a0c0f;font-size:28px;flex:none}.track-name{font-weight:800;font-size:17px}.track-src{font-size:12px;color:var(--muted);margin-top:3px}.seek{width:100%;margin:15px 0 5px;accent-color:#fff}.time-row{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.controls{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:10px}.player-btn{border:0;background:transparent;color:#fff;font-size:20px;width:44px;height:44px;border-radius:50%;cursor:pointer}.player-btn.main{background:#f4f6f8;color:#07090c;width:54px;height:54px;font-size:24px}.music-tools{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.music-tools .btn{width:100%}.music-input{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}.playlist{margin-top:15px}.playlist-item{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #272f39;border-radius:14px;background:#12171d;margin:8px 0}.playlist-item.active{border-color:#e4e7ea}.playlist-main{flex:1;min-width:0}.playlist-name{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.playlist-sub{font-size:11px;color:var(--muted);margin-top:2px}.playlist-actions{display:flex;gap:4px}.mini{width:36px;height:36px;border-radius:10px;border:1px solid #303944;background:#1b2129;color:#fff;cursor:pointer}.music-note{font-size:13px;color:var(--muted);line-height:1.45}.spotify-box{margin-top:12px;padding:14px;border:1px dashed #3b444f;border-radius:16px}.tag{display:inline-flex;padding:5px 8px;border-radius:999px;background:#20262e;color:#cbd2da;font-size:11px;margin-right:5px}.file-input{display:none}@media(max-width:520px){.grid{gap:8px}.hero h1{font-size:32px}.music-fab{right:14px;bottom:76px}.music-panel{padding-left:13px;padding-right:13px}.music-tools{grid-template-columns:1fr}.music-input{grid-template-columns:1fr}}
+
+/* Aesthetic click feedback */
+button,.btn,.tab,label.btn{position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent;transition:transform .12s ease,filter .12s ease,box-shadow .18s ease}
+button:active,.btn:active,.tab:active,label.btn:active{transform:scale(.96);filter:brightness(1.12)}
+.click-ripple{position:absolute;border-radius:50%;pointer-events:none;width:18px;height:18px;background:rgba(255,255,255,.42);transform:translate(-50%,-50%) scale(0);animation:aestheticRipple .48s ease-out forwards;mix-blend-mode:screen}
+@keyframes aestheticRipple{to{transform:translate(-50%,-50%) scale(9);opacity:0}}
+.click-pop{animation:aestheticPop .22s ease-out}
+@keyframes aestheticPop{0%{transform:scale(1)}45%{transform:scale(1.035)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.click-ripple{display:none}button,.btn,.tab,label.btn{transition:none}.click-pop{animation:none}}
+
+.mini-chart{margin-top:14px}.metric-row{display:grid;grid-template-columns:95px 1fr 72px;gap:9px;align-items:center;margin:10px 0;font-size:12px}.metric-track{height:10px;background:#272e37;border-radius:99px;overflow:hidden}.metric-fill{height:100%;border-radius:99px;background:#f4f6f8;transition:width .4s ease}.food-card{padding:12px;border:1px solid #29313b;border-radius:14px;background:#11161c;margin:8px 0}.food-card .food-top{display:flex;justify-content:space-between;gap:8px}.danger{background:#3a2023!important;color:#fff!important}.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.stat{padding:12px;border:1px solid #29313b;border-radius:14px;background:#11161c}.stat b{font-size:18px}.plan-item{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #272e37}.plan-item:last-child{border-bottom:0}
+select.input{appearance:auto}
 </style>
 </head>
 <body>
@@ -64,6 +83,78 @@ main{max-width:760px;margin:auto;padding:18px 16px 90px}.hero{padding:18px 2px}.
 <br><button class="btn" onclick="saveStats()">Save stats</button>
 </div>
 <div class="card"><h2>90-day completion</h2><div class="progress"><div id="bar" class="bar"></div></div><p id="progressText" class="small"></p></div>
+<div class="card" id="dailyModeCard"><h2>🔁 Daily Mode</h2><p class="notice" id="dailyModeText">After Day 90, the app continues automatically using your weekly workout schedule. Every new calendar day gets a fresh workout checklist.</p></div>
+</div>
+
+
+<div id="custom" class="hidden">
+<div class="card">
+<h2>⚙️ Customize your plan</h2>
+<p class="notice">Set your own details. The app estimates calories and protein, then builds your food dashboard from what you actually have.</p>
+<div class="grid">
+<label class="small">Age<input class="input" id="cAge" type="number" min="13" max="100" placeholder="e.g. 20"></label>
+<label class="small">Sex<select class="input" id="cSex"><option value="male">Male</option><option value="female">Female</option></select></label>
+<label class="small">Height (cm)<input class="input" id="cHeight" type="number" step="0.1" placeholder="186"></label>
+<label class="small">Weight (kg)<input class="input" id="cWeight" type="number" step="0.1" placeholder="74"></label>
+<label class="small">Activity<select class="input" id="cActivity"><option value="1.2">Sedentary</option><option value="1.375">Lightly active</option><option value="1.55" selected>Moderately active</option><option value="1.725">Very active</option><option value="1.9">Athlete / highly active</option></select></label>
+<label class="small">Goal<select class="input" id="cGoal"><option value="cut">Fat loss</option><option value="recomp" selected>Recomposition</option><option value="maintain">Maintain</option><option value="gain">Muscle gain</option></select></label>
+</div>
+<br><button class="btn" onclick="saveProfile()">Generate my targets</button>
+</div>
+
+<div class="grid">
+<div class="card"><div class="small">CALORIE TARGET</div><div class="big" id="targetCalories">—</div><div class="small" id="maintenanceText">Enter your details</div></div>
+<div class="card"><div class="small">PROTEIN TARGET</div><div class="big" id="targetProtein">—</div><div class="small">Based on body weight + goal</div></div>
+</div>
+
+<div class="card">
+<h2>🍱 My foods</h2>
+<p class="notice">Add foods you can afford or already have. Amount is the amount you plan to eat per day. Prices are optional.</p>
+<div class="grid">
+<input class="input" id="foodName" placeholder="Food (e.g. eggs)">
+<input class="input" id="foodAmount" type="number" step="0.1" placeholder="Amount (g/ml/servings)">
+<input class="input" id="foodCalories" type="number" step="1" placeholder="Calories for this amount">
+<input class="input" id="foodProtein" type="number" step="0.1" placeholder="Protein (g)">
+<input class="input" id="foodCost" type="number" step="0.1" placeholder="Cost ₹ (optional)">
+<button class="btn" onclick="addFood()">＋ Add food</button>
+</div>
+<div id="foodList" style="margin-top:12px"></div>
+</div>
+
+<div class="card">
+<h2>📊 Nutrition dashboard</h2>
+<div id="nutritionSummary" class="notice">Add your profile and foods to see your dashboard.</div>
+<div class="mini-chart" id="calorieChart"></div>
+<div class="mini-chart" id="proteinChart"></div>
+<div class="grid" id="budgetStats"></div>
+</div>
+
+<div class="card">
+<h2>🧠 Build my day</h2>
+<p class="notice">The app uses your saved foods and targets to suggest how much of each food to use. It does not replace medical or dietitian advice.</p>
+<button class="btn" onclick="buildFoodPlan()">Generate food plan</button>
+<div id="foodPlan" style="margin-top:12px"></div>
+</div>
+</div>
+
+<button class="music-fab" id="musicFab" aria-label="Open workout music" onclick="toggleMusic()">🎵<span class="dot" id="musicDot" style="display:none"></span></button>
+
+<div class="music-sheet" id="musicSheet" onclick="if(event.target===this)toggleMusic(false)">
+  <div class="music-panel">
+    <div class="grab"></div>
+    <div class="music-head"><div><div class="eyebrow">WORKOUT AUDIO</div><div class="music-title">Music</div></div><button class="icon-btn" onclick="toggleMusic(false)">✕</button></div>
+    <div class="player">
+      <div class="now"><div class="cover">♪</div><div style="min-width:0"><div class="track-name" id="musicNow">No track selected</div><div class="track-src" id="musicSource">Add your workout music below</div></div></div>
+      <input class="seek" id="musicSeek" type="range" min="0" max="100" value="0" step="0.1">
+      <div class="time-row"><span id="musicCurrent">0:00</span><span id="musicDuration">0:00</span></div>
+      <div class="controls"><button class="player-btn" onclick="prevTrack()">⏮</button><button class="player-btn" onclick="togglePlay()" id="musicPlay">▶</button><button class="player-btn" onclick="nextTrack()">⏭</button><button class="player-btn" onclick="toggleShuffle()" id="shuffleBtn">🔀</button></div>
+    </div>
+    <div class="music-tools"><label class="btn" style="text-align:center">＋ Add audio files<input class="file-input" id="musicFiles" type="file" accept="audio/*" multiple onchange="addLocalTracks(this.files)"></label><button class="btn alt" onclick="showUrlPrompt()">＋ Add direct audio URL</button></div>
+    <div class="spotify-box"><div><span class="tag">Spotify</span><span class="tag">Playlist link</span></div><p class="music-note">Paste a Spotify playlist link to save it here. Playback stays with Spotify; this app does not extract or bypass Spotify audio/ads.</p><div class="music-input"><input class="input" id="spotifyUrl" placeholder="https://open.spotify.com/playlist/..." value=""><button class="btn" onclick="saveSpotify()">Save</button></div><div id="spotifySaved" class="small" style="margin-top:8px"></div></div>
+    <div class="playlist"><div style="display:flex;justify-content:space-between;align-items:center"><h3 style="margin:0">Your workout playlist</h3><button class="mini" onclick="clearPlaylist()" title="Clear playlist">🗑</button></div><div id="playlistList"></div></div>
+    <p class="music-note">Background playback uses the browser's media session/audio support. Lock-screen controls work where supported by your Android browser/PWA. Download is available for direct audio files/URLs you have permission to use.</p>
+    <audio id="musicAudio" preload="metadata"></audio>
+  </div>
 </div>
 </main>
 
@@ -72,6 +163,7 @@ main{max-width:760px;margin:auto;padding:18px 16px 90px}.hero{padding:18px 2px}.
 <button onclick="show('workout',this)">Workout</button>
 <button onclick="show('diet',this)">Diet</button>
 <button onclick="show('progress',this)">Progress</button>
+<button onclick="show('custom',this)">Customize</button>
 </nav>
 
 <script>
@@ -98,25 +190,27 @@ const diet=[
 const keys=["MON","TUE","WED","THU","FRI","SAT","SUN"];
 function todayKey(){return keys[new Date().getDay()==0?6:new Date().getDay()-1]}
 function startDate(){let x=localStorage.getItem("start90");if(!x){x=new Date().toISOString();localStorage.setItem("start90",x)}return new Date(x)}
-function dayNum(){return Math.min(90,Math.max(1,Math.floor((Date.now()-startDate().getTime())/86400000)+1))}
+function dayNum(){return Math.max(1,Math.floor((Date.now()-startDate().getTime())/86400000)+1)}
+function phaseLabel(){return dayNum()<=90?`Day ${dayNum()} of 90`:`90-Day Complete • Daily Mode • Day ${dayNum()}`}
+function dateKey(){return new Date().toISOString().slice(0,10)}
 function render(){
 let now=new Date(), k=todayKey(), w=workouts[k];
 document.getElementById("date").textContent=now.toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"});
-document.getElementById("day90").textContent=`Day ${dayNum()} of 90`;
+document.getElementById("day90").textContent=phaseLabel();
 document.getElementById("todayWorkout").textContent=w.name;
 document.getElementById("todayHeading").textContent=`Today's workout — ${w.name}`;
 document.getElementById("todayList").innerHTML=items(w,k);
 document.getElementById("clock").textContent=now.toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"});
-document.getElementById("bar").style.width=(dayNum()/90*100)+"%";
-document.getElementById("progressText").textContent=`Day ${dayNum()} of 90`;
+document.getElementById("bar").style.width=Math.min(100,dayNum()/90*100)+"%";
+document.getElementById("progressText").textContent=dayNum()<=90?`Day ${dayNum()} of 90`:`90-day program complete • Daily workout mode active`;
 document.getElementById("weight").value=localStorage.getItem("weight")||"";
 document.getElementById("waist").value=localStorage.getItem("waist")||"";
 document.getElementById("reminder").value=localStorage.getItem("reminder")||"08:30";
 document.getElementById("reminderStatus").textContent=localStorage.getItem("reminder")?"Reminder saved for "+localStorage.getItem("reminder"):"Reminder not enabled";
 document.getElementById("dietList").innerHTML=diet.map(x=>`<div class="row"><span><b>${x[0]}</b> — ${x[1]}<br><span class="small">${x[2]}</span></span></div>`).join("");
 }
-function items(w,k){return w.items.map((x,i)=>{let id=`${k}-${i}`;return `<div class="row"><input type="checkbox" ${localStorage.getItem(id)==="1"?"checked":""} onchange="localStorage.setItem('${id}',this.checked?'1':'0')"><span><b>${x[0]}</b><br><span class="small">${x[1]}</span></span></div>`}).join("")}
-function show(id,btn){["home","workout","diet","progress"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");if(id==="workout")renderTabs()}
+function items(w,k){let d=dateKey();return w.items.map((x,i)=>{let id=`workout-${d}-${k}-${i}`;return `<div class="row"><input type="checkbox" ${localStorage.getItem(id)==="1"?"checked":""} onchange="localStorage.setItem('${id}',this.checked?'1':'0')"><span><b>${x[0]}</b><br><span class="small">${x[1]}</span></span></div>`}).join("")}
+function show(id,btn){["home","workout","diet","progress"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));btn.classList.add("active");if(id==="workout")renderTabs();if(id==="custom")renderCustom()}
 function renderTabs(){let k=todayKey();document.getElementById("tabs").innerHTML=keys.map(x=>`<button class="tab ${x===k?"active":""}" onclick="renderWorkout('${x}',this)">${x}</button>`).join("");renderWorkout(k,document.querySelector(".tab.active"))}
 function renderWorkout(k,btn){document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));if(btn)btn.classList.add("active");document.getElementById("workoutHeading").textContent=workouts[k].name;document.getElementById("workoutList").innerHTML=items(workouts[k],k)}
 async function enableReminder(){
@@ -125,8 +219,113 @@ if("Notification" in window){let p=await Notification.requestPermission();if(p==
 else document.getElementById("reminderStatus").textContent="Notifications aren't supported in this browser.";
 }
 function saveStats(){localStorage.setItem("weight",document.getElementById("weight").value);localStorage.setItem("waist",document.getElementById("waist").value);alert("Saved on this device.")}
+
+// ===== Custom user nutrition system =====
+const defaultProfile={age:20,sex:'male',height:186,weight:74,activity:1.55,goal:'recomp'};
+function getProfile(){try{return {...defaultProfile,...JSON.parse(localStorage.getItem('customProfile')||'{}')}}catch(e){return defaultProfile}}
+function getFoods(){try{return JSON.parse(localStorage.getItem('customFoods')||'[]')}catch(e){return []}}
+function calcTargets(p=getProfile()){
+ const bmr=10*Number(p.weight)+6.25*Number(p.height)-5*Number(p.age)+(p.sex==='male'?5:-161);
+ const maintenance=Math.round(bmr*Number(p.activity));
+ let calories=maintenance;
+ if(p.goal==='cut') calories=maintenance-400;
+ if(p.goal==='recomp') calories=maintenance-200;
+ if(p.goal==='gain') calories=maintenance+250;
+ const protein=Math.round(Number(p.weight)*(p.goal==='gain'?2.0:p.goal==='cut'?2.0:1.8));
+ return {bmr,maintenance,calories:Math.max(1200,calories),protein};
+}
+function saveProfile(){
+ const p={age:Number(document.getElementById('cAge').value),sex:document.getElementById('cSex').value,height:Number(document.getElementById('cHeight').value),weight:Number(document.getElementById('cWeight').value),activity:Number(document.getElementById('cActivity').value),goal:document.getElementById('cGoal').value};
+ if(!p.age||!p.height||!p.weight){alert('Please enter age, height and weight.');return}
+ localStorage.setItem('customProfile',JSON.stringify(p));renderCustom();
+}
+function loadProfileForm(){const p=getProfile();['cAge','cHeight','cWeight'].forEach((id)=>{const key=id==='cAge'?'age':id==='cHeight'?'height':'weight';document.getElementById(id).value=p[key]||''});document.getElementById('cSex').value=p.sex;document.getElementById('cActivity').value=p.activity;document.getElementById('cGoal').value=p.goal}
+function addFood(){
+ const name=document.getElementById('foodName').value.trim(), amount=Number(document.getElementById('foodAmount').value), calories=Number(document.getElementById('foodCalories').value), protein=Number(document.getElementById('foodProtein').value), cost=Number(document.getElementById('foodCost').value)||0;
+ if(!name||!amount||!calories||isNaN(protein)){alert('Enter food, amount, calories and protein.');return}
+ const foods=getFoods();foods.push({id:Date.now()+Math.random(),name,amount,calories,protein,cost});localStorage.setItem('customFoods',JSON.stringify(foods));
+ ['foodName','foodAmount','foodCalories','foodProtein','foodCost'].forEach(id=>document.getElementById(id).value='');renderCustom();
+}
+function removeFood(id){localStorage.setItem('customFoods',JSON.stringify(getFoods().filter(f=>f.id!==id)));renderCustom()}
+function renderFoods(){const foods=getFoods();const box=document.getElementById('foodList');if(!foods.length){box.innerHTML='<p class="music-note">No foods added yet.</p>';return}box.innerHTML=foods.map(f=>`<div class="food-card"><div class="food-top"><div><b>${escapeHtml(f.name)}</b><div class="small">${f.amount} amount • ${f.calories} kcal • ${f.protein}g protein${f.cost?' • ₹'+f.cost.toFixed(0):''}</div></div><button class="mini danger" onclick="removeFood(${f.id})">✕</button></div></div>`).join('')}
+function metric(label,current,target,unit){const pct=Math.min(100,Math.max(0,current/Math.max(1,target)*100));return `<div class="metric-row"><span>${label}</span><div class="metric-track"><div class="metric-fill" style="width:${pct}%"></div></div><span>${Math.round(current)} / ${Math.round(target)}${unit}</span></div>`}
+function renderCustom(){
+ loadProfileForm();const p=getProfile(), t=calcTargets(p), foods=getFoods();
+ document.getElementById('targetCalories').textContent=t.calories+' kcal';document.getElementById('targetProtein').textContent=t.protein+' g';document.getElementById('maintenanceText').textContent=`Maintenance ≈ ${t.maintenance} kcal • BMR ≈ ${Math.round(t.bmr)} kcal`;
+ const kcal=foods.reduce((a,f)=>a+Number(f.calories),0), protein=foods.reduce((a,f)=>a+Number(f.protein),0), cost=foods.reduce((a,f)=>a+Number(f.cost||0),0);
+ document.getElementById('nutritionSummary').innerHTML=`<div class="stat-grid"><div class="stat"><span class="small">FOOD CALORIES</span><br><b>${Math.round(kcal)} kcal</b></div><div class="stat"><span class="small">FOOD PROTEIN</span><br><b>${Math.round(protein)} g</b></div></div>${metric('Calories',kcal,t.calories,' kcal')}${metric('Protein',protein,t.protein,' g')}`;
+ document.getElementById('calorieChart').innerHTML=metric('Calories',kcal,t.calories,' kcal');document.getElementById('proteinChart').innerHTML=metric('Protein',protein,t.protein,' g');
+ document.getElementById('budgetStats').innerHTML=`<div class="stat"><span class="small">EST. DAILY FOOD COST</span><br><b>₹${cost.toFixed(0)}</b></div><div class="stat"><span class="small">CALORIE GAP</span><br><b>${Math.max(0,Math.round(t.calories-kcal))} kcal</b></div>`;
+ renderFoods();
+}
+function buildFoodPlan(){
+ const p=getProfile(),t=calcTargets(p),foods=getFoods();if(!foods.length){document.getElementById('foodPlan').innerHTML='<p class="notice">Add some foods first.</p>';return}
+ let remainK=t.calories,remainP=t.protein,html='';
+ const sorted=[...foods].sort((a,b)=>(b.protein/Math.max(1,b.calories))-(a.protein/Math.max(1,a.calories)));
+ sorted.forEach((f,i)=>{if(remainK<=80||remainP<=2)return;let fraction=Math.min(1,remainK/Math.max(1,f.calories),remainP/Math.max(1,f.protein));if(fraction<.15)return;let qty=Math.max(.25,Math.min(1,fraction));let kcal=Math.round(f.calories*qty),prot=Math.round(f.protein*qty*10)/10;html+=`<div class="plan-item"><span><b>${escapeHtml(f.name)}</b><br><span class="small">~${Math.round(f.amount*qty*10)/10} of your listed amount</span></span><span>${kcal} kcal • ${prot}g</span></div>`;remainK-=kcal;remainP-=prot});
+ html+=`<div class="notice" style="margin-top:12px"><b>Approx. remaining:</b> ${Math.max(0,Math.round(remainK))} kcal • ${Math.max(0,Math.round(remainP*10)/10)}g protein. Adjust portions to fit your actual meals.</div>`;document.getElementById('foodPlan').innerHTML=html;
+}
+
 setInterval(render,1000);render();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(()=>{});
+
+// ===== Workout Music =====
+const musicAudio=document.getElementById('musicAudio');
+let musicTracks=JSON.parse(localStorage.getItem('musicTracks')||'[]');
+let musicIndex=Number(localStorage.getItem('musicIndex')||0); let musicShuffle=localStorage.getItem('musicShuffle')==='1';
+let musicDb;
+function openMusicDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window))return reject();const req=indexedDB.open('aesthetic90music',1);req.onupgradeneeded=()=>req.result.createObjectStore('tracks',{keyPath:'id'});req.onsuccess=()=>{musicDb=req.result;resolve(musicDb)};req.onerror=reject})}
+openMusicDB().catch(()=>{});
+function toggleMusic(force){const el=document.getElementById('musicSheet');const open=force===undefined?!el.classList.contains('open'):force;el.classList.toggle('open',open);if(open){renderPlaylist();loadSpotifySaved();}}
+function fmt(t){if(!isFinite(t))return '0:00';const m=Math.floor(t/60),s=Math.floor(t%60).toString().padStart(2,'0');return `${m}:${s}`}
+function persistTracks(){localStorage.setItem('musicTracks',JSON.stringify(musicTracks.map(({id,name,src,type,kind})=>({id,name,src,type,kind}))));localStorage.setItem('musicIndex',musicIndex)}
+async function addLocalTracks(files){for(const f of [...files]){const id='local-'+crypto.randomUUID();if(musicDb){await new Promise((res,rej)=>{const tx=musicDb.transaction('tracks','readwrite');tx.objectStore('tracks').put({id,name:f.name,blob:f});tx.oncomplete=res;tx.onerror=rej})}musicTracks.push({id,name:f.name,src:'',type:f.type,kind:'local'});}persistTracks();renderPlaylist();if(musicTracks.length===files.length)selectTrack(0)}
+function showUrlPrompt(){const name=prompt('Song name?');if(!name)return;const url=prompt('Paste a direct audio URL you own/have permission to use (MP3/M4A/etc.)');if(!url)return;musicTracks.push({id:'url-'+crypto.randomUUID(),name,src:url,type:'audio',kind:'url'});persistTracks();renderPlaylist();selectTrack(musicTracks.length-1)}
+function getTrackBlob(id){return new Promise((resolve,reject)=>{if(!musicDb)return reject();const tx=musicDb.transaction('tracks','readonly');const req=tx.objectStore('tracks').get(id);req.onsuccess=()=>resolve(req.result);req.onerror=reject})}
+async function resolveSrc(track){if(!track)return '';if(track.kind==='local'){try{const x=await getTrackBlob(track.id);if(x?.blob)return URL.createObjectURL(x.blob)}catch(e){}}return track.src||''}
+async function selectTrack(i,autoplay=false){if(!musicTracks.length){document.getElementById('musicNow').textContent='No track selected';return}musicIndex=(i+musicTracks.length)%musicTracks.length;const t=musicTracks[musicIndex];const src=await resolveSrc(t);musicAudio.src=src;musicAudio.load();document.getElementById('musicNow').textContent=t.name;document.getElementById('musicSource').textContent=t.kind==='local'?'On this device':'Direct audio URL';document.getElementById('musicSeek').value=0;persistTracks();renderPlaylist();if(autoplay)togglePlay(true);updateMediaSession()}
+function togglePlay(force){if(!musicAudio.src&&musicTracks.length){selectTrack(musicIndex,true);return}if(force===true||musicAudio.paused){musicAudio.play().then(()=>{document.getElementById('musicPlay').textContent='⏸';document.getElementById('musicFab').classList.add('playing');document.getElementById('musicDot').style.display='block';updateMediaSession()}).catch(()=>{})}else{musicAudio.pause();document.getElementById('musicPlay').textContent='▶';document.getElementById('musicFab').classList.remove('playing');document.getElementById('musicDot').style.display='none';}}
+function nextTrack(){if(!musicTracks.length)return;let n=musicShuffle?Math.floor(Math.random()*musicTracks.length):musicIndex+1;selectTrack(n,true)}
+function prevTrack(){if(!musicTracks.length)return;selectTrack(musicIndex-1,true)}
+function toggleShuffle(){musicShuffle=!musicShuffle;localStorage.setItem('musicShuffle',musicShuffle?'1':'0');document.getElementById('shuffleBtn').style.opacity=musicShuffle?'1':'.55'}
+function renderPlaylist(){const box=document.getElementById('playlistList');if(!musicTracks.length){box.innerHTML='<p class="music-note">No tracks yet. Add audio files or a direct audio URL.</p>';return}box.innerHTML=musicTracks.map((t,i)=>`<div class="playlist-item ${i===musicIndex?'active':''}"><button class="mini" onclick="selectTrack(${i},true)">▶</button><div class="playlist-main"><div class="playlist-name">${escapeHtml(t.name)}</div><div class="playlist-sub">${t.kind==='local'?'Saved on this device':'Direct URL'}</div></div><div class="playlist-actions">${t.kind==='url'?`<button class="mini" onclick="downloadTrack(${i})" title="Download direct file">⬇</button>`:''}<button class="mini" onclick="removeTrack(${i})">✕</button></div></div>`).join('');document.getElementById('shuffleBtn').style.opacity=musicShuffle?'1':'.55'}
+function escapeHtml(x){return String(x).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+function removeTrack(i){const t=musicTracks[i];musicTracks.splice(i,1);if(musicIndex>=musicTracks.length)musicIndex=Math.max(0,musicTracks.length-1);persistTracks();if(t&&t.kind==='local'&&musicDb){const tx=musicDb.transaction('tracks','readwrite');tx.objectStore('tracks').delete(t.id)}if(musicTracks.length)selectTrack(musicIndex);else{musicAudio.pause();musicAudio.removeAttribute('src');document.getElementById('musicNow').textContent='No track selected'}renderPlaylist()}
+function clearPlaylist(){if(!musicTracks.length)return;if(!confirm('Clear your workout playlist?'))return;musicTracks=[];musicIndex=0;persistTracks();if(musicDb){const tx=musicDb.transaction('tracks','readwrite');tx.objectStore('tracks').clear()}musicAudio.pause();musicAudio.removeAttribute('src');renderPlaylist()}
+function downloadTrack(i){const t=musicTracks[i];if(!t?.src)return;const a=document.createElement('a');a.href=t.src;a.download=t.name;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+function saveSpotify(){const v=document.getElementById('spotifyUrl').value.trim();if(!/^https?:\/\/(open\.)?spotify\.com\//i.test(v)){document.getElementById('spotifySaved').textContent='Please paste a Spotify playlist link.';return}localStorage.setItem('spotifyPlaylist',v);loadSpotifySaved()}
+function loadSpotifySaved(){const v=localStorage.getItem('spotifyPlaylist');document.getElementById('spotifyUrl').value=v||'';document.getElementById('spotifySaved').innerHTML=v?`Saved playlist • <a href="${escapeHtml(v)}" target="_blank" rel="noopener" style="color:#fff">Open in Spotify ↗</a>`:''}
+musicAudio.addEventListener('timeupdate',()=>{const p=musicAudio.duration?(musicAudio.currentTime/musicAudio.duration)*100:0;document.getElementById('musicSeek').value=p;document.getElementById('musicCurrent').textContent=fmt(musicAudio.currentTime);document.getElementById('musicDuration').textContent=fmt(musicAudio.duration)});
+musicAudio.addEventListener('ended',nextTrack);document.getElementById('musicSeek').addEventListener('input',e=>{if(musicAudio.duration)musicAudio.currentTime=(e.target.value/100)*musicAudio.duration});
+function updateMediaSession(){if(!('mediaSession' in navigator)||!musicTracks.length)return;const t=musicTracks[musicIndex];navigator.mediaSession.metadata=new MediaMetadata({title:t?.name||'Workout Music',artist:'90-Day Aesthetic',album:'Workout Playlist'});navigator.mediaSession.setActionHandler('play',()=>togglePlay(true));navigator.mediaSession.setActionHandler('pause',()=>togglePlay(false));navigator.mediaSession.setActionHandler('previoustrack',prevTrack);navigator.mediaSession.setActionHandler('nexttrack',nextTrack)}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&& !musicAudio.paused) updateMediaSession()});
+renderPlaylist();loadSpotifySaved();
+</script>
+
+<script>
+// Global aesthetic click animation: subtle press + ripple on every tappable control.
+(function(){
+  const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.addEventListener('pointerdown',function(e){
+    const el=e.target.closest('button,.btn,.tab,label.btn,a');
+    if(!el || reduce) return;
+    const rect=el.getBoundingClientRect();
+    const r=document.createElement('span');
+    r.className='click-ripple';
+    r.style.left=(e.clientX-rect.left)+'px';
+    r.style.top=(e.clientY-rect.top)+'px';
+    el.appendChild(r);
+    setTimeout(()=>r.remove(),520);
+  },{passive:true});
+  document.addEventListener('click',function(e){
+    const el=e.target.closest('button,.btn,.tab,label.btn,a');
+    if(!el || reduce) return;
+    el.classList.remove('click-pop');
+    void el.offsetWidth;
+    el.classList.add('click-pop');
+    setTimeout(()=>el.classList.remove('click-pop'),240);
+  });
+})();
 </script>
 </body>
 </html>
