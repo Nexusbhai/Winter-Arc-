@@ -1,4 +1,4 @@
-const CACHE="aesthetic90-v3";
+const CACHE="aesthetic90-v4";
 const ASSETS=["./","./index.html","./manifest.json","./sw.js","./icon.svg"];
 self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
 self.addEventListener("activate",e=>e.waitUntil(self.clients.claim()));
